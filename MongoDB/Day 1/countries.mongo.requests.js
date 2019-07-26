@@ -65,3 +65,15 @@ db.countries.find(
   {_id: true}
 )
 
+var bad_bacon = {
+  'exports.foods': {
+    $elemMatch: {
+      name: 'bacon',
+      tasty: false
+    }
+  }
+}
+db.countries.count()
+db.countries.find(bad_bacon)
+db.countries.remove(bad_bacon)
+db.countries.count()

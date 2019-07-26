@@ -65,3 +65,25 @@ db.towns.find(
   {'mayor.party': {$exists: false}},
   { _id: false, name: true, mayor: true}
 )
+
+// $unset to remove the field
+db.towns.update(
+  {name: 'Portland'},
+  {$set: {state: 'OR'}} // just {state: 'OR'} would replace the whole object
+)
+
+// Increment a field value
+db.towns.update(
+  {name: 'Portland'},
+  {$inc: {population: 1000}} // just {state: 'OR'} would replace the whole object
+)
+
+db.towns.update(
+  { name: 'Portland'},
+  { $set: {country: { $ref: 'countries', $id: 'us'}}}
+)
+
+// Find Portland country document
+var portland = db.towns.findOne({name: 'Portland'})
+db.countries.findOne({_id: portland.country.$id})
+
