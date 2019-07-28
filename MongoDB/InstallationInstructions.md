@@ -1,5 +1,6 @@
 
 # MongoDB installation instructions
+
 ## With Homebrew (Mac)
 
 |                           |           Command           |
@@ -15,7 +16,7 @@
 brew services list
 
 
-## Home installation
+## Home installation (Mac)
 
 |                           |           Command           |                                Exemple                                  |
 | :------------------------ | :-------------------------- | :---------------------------------------------------------------------- |
@@ -25,6 +26,19 @@ brew services list
 | Launch server             | mongod                      |                                                                         |
 | Stop server               | Control-C or kill process   |                                                                         |
 | Data location             | /data/db                    |                                                                         |
+
+
+## Debian
+
+|                           |           Command                    |
+| :------------------------ | :----------------------------------- |
+| Installation command      | sudo apt-get install mongodb         |
+| Installed in              | /usr/bin/mongodb                     |
+| Configuration file        | /etc/mongodb.conf                    |
+| Launch server             | sudo systemctl start mongodb.service |
+| Stop server               | sudo systemctl stop mongodb.service  |
+| Data location             | /var/lib/mongodb                     |
+
 
 ## Access MongoDB remotely
 Set `bind_ip` or `bindIp` to 0.0.0.0 if you want to authorize access to every machine.
