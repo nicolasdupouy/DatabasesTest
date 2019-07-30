@@ -15,6 +15,7 @@
 brew services list
 
 ## Debian
+
 |                           |                  Command                                |
 | :------------------------ | :------------------------------------------------------ |
 | Installation command      | sudo apt-get install postgresql-11 postgresql-client-11 |
@@ -24,7 +25,20 @@ brew services list
 | Stop server               | sudo systemctl stop postgresql                          |
 | Data location             | /var/lib/postgres                                       |
 
+## Access PostgreSQL remotely
+In *postgersql.conf* add:
+
+    listen_addresses = '*'
+
+In *pg_hba.conf* add:
+
+    host    all             all             0.0.0.0/0            md5
+
+Replace *md5* by *trust* if you don't want to create a dedicated user (unsecure).
+
+
 ## Setup
+Need `sudo -u postgres` before the command if postgres is the owner of the files (Data location)
  - createuser nicolas
  - createdb book
 
