@@ -42,4 +42,6 @@ Need `sudo -u postgres` before the command if postgres is the owner of the files
  - createuser nicolas
  - createdb book
 
-
+## Export data
+pg_dump -U username databasename > databasename.pg.sql
+psql -U username databasename < databasename.pg.sql
