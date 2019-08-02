@@ -36,12 +36,42 @@ In *pg_hba.conf* add:
 
 Replace *md5* by *trust* if you don't want to create a dedicated user (unsecure).
 
-
 ## Setup
 Need `sudo -u postgres` before the command if postgres is the owner of the files (Data location)
- - createuser nicolas
- - createdb book
+### Initial connection
+    psql -h 127.0.0.1 -p 5432 -U postgres
+or 
+
+    psql postgres
+    
+### Create user
+Change password for postgres role 
+
+    postgres=# \password postgres
+    
+Create a new non superuser (role)
+
+    postgres=# CREATE ROLE nicolas WITH LOGIN PASSWORD 'XXXXXX';
+    postgres=# ALTER ROLE nicolas CREATEDB;
+    postgres=# \du
+    
+### Reconnect
+    psql postgres -U nicolas
+
+### Create database
+    postgres=> CREATE DATABASE databasetest;
+    postgres=> \l
+    postgres=> GRANT ALL PRIVILEGES ON DATABASE databasetest TO nicolas;
+    postgres=> \list
+    postgres=> \connect databasetest
+
+
+
+### Second way
+Use the createuser and createdb binaries
+
+    createdb book
 
 ## Export data
-pg_dump -U username databasename > databasename.pg.sql
-psql -U username databasename < databasename.pg.sql
+    pg_dump -U username databasename > databasename.pg.sql
+    psql -U username databasename < databasename.pg.sql

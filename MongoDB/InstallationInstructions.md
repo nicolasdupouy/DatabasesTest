@@ -30,14 +30,14 @@ brew services list
 
 ## Debian
 
-|                           |           Command                    |
-| :------------------------ | :----------------------------------- |
-| Installation command      | sudo apt-get install mongodb         |
-| Installed in              | /usr/bin/mongodb                     |
-| Configuration file        | /etc/mongodb.conf                    |
-| Launch server             | sudo systemctl start mongodb.service |
-| Stop server               | sudo systemctl stop mongodb.service  |
-| Data location             | /var/lib/mongodb                     |
+|                           |           Command            |
+| :------------------------ | :--------------------------- |
+| Installation command      | sudo apt-get install mongodb |
+| Installed in              | /usr/bin/mongodb             |
+| Configuration file        | /etc/mongodb.conf            |
+| Launch server             | sudo systemctl start mongodb |
+| Stop server               | sudo systemctl stop mongodb  |
+| Data location             | /var/lib/mongodb             |
 
 
 ## Access MongoDB remotely
