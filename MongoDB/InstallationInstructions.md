@@ -3,14 +3,14 @@
 
 ## With Homebrew (Mac)
 
-|                           |           Command           |
-| :------------------------ | :-------------------------- |
-| Installation command      | brew install mongodb        |
-| Installed in              | /usr/local/Cellar/mongodb   |
-| Configuration file        | /usr/local/etc/mongod.conf  |
-| Launch server             | brew services start mongodb |
-| Stop server               | brew services stop mongodb  |
-| Data location             | /usr/local/var/mongodb      |
+|                           |           Command                     |
+| :------------------------ | :------------------------------------ |
+| Installation command      | brew install mongodb-community        |
+| Installed in              | /usr/local/Cellar/mongodb-community   |
+| Configuration file        | /usr/local/etc/mongod.conf            |
+| Launch server             | brew services start mongodb-community |
+| Stop server               | brew services stop mongodb-community  |
+| Data location             | /usr/local/var/mongodb                |
 
 ### List Homebrew services
 brew services list
